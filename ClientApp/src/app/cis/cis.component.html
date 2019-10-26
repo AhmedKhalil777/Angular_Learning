@@ -1,0 +1,36 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Cis Depts
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a *ngFor="let dept of depts" class="dropdown-item" (click)="myalert()" href="#">{{dept}} </a>
+    </div>
+</div>
+
+<div (click)="divclick()">
+    <button (click)="btnclick($event)">
+        Save
+    </button>
+</div>
+
+<div>
+    <input type="text" (keyup)="okeyup()" />
+</div>
+<div>
+    <p> when enter = loging </p>
+    <input type="text" (keyup.enter)="okeyup()" />
+</div>
+<div>
+    <p> when enter your words its in console</p>
+    <input type="text" (keyup.enter)="okeyupmyself($event)" />
+</div>
+<div>
+    <p> when enter your words its in console</p>
+    <input type="text" (keyup.enter)="okeyupprint($event)" />
+    <p>result ={{result}}</p>
+</div>
+<div>
+    <p> when enter your words its in console</p>
+    <input #name type="text" (keyup.enter)="okeyupprint(name.value)" />
+    <p>result ={{result}}</p>
+</div>
